@@ -9,3 +9,8 @@ venv/
 .DS_Store
 outputs/**
 !outputs/README.md
+data/raw/
+data/interim/
+*.pt
+*.pth
+*.onnx

@@ -1,8 +1,8 @@
 # Fog Visibility Project
 
-Research materials for road-fog visibility estimation and evolution forecasting. Repository updates are organized as focused commits with an explicit purpose and version where a component has a releaseable snapshot.
+Research materials for road-fog visibility estimation and evolution forecasting. Work is versioned in focused commits, with source reports, experiment artifacts, and repeatable code preserved by component.
 
-## Project components
+## Existing research materials
 
 | Component | Version / record | Purpose | Location |
 |---|---|---|---|
@@ -11,16 +11,35 @@ Research materials for road-fog visibility estimation and evolution forecasting.
 | CNN run artifacts | `v1.0.0`, original run 2026-10-04 | Preserve checkpoint, metrics, training history, and random-check outputs | `results/transmittance_beta/v1.0.0/` |
 | Integrated model results | Report transcription | Machine-readable metrics for CNN, proxy forecasting, and AMOS experiments | `results/model_metrics.csv` |
 | Real-image proxy observations | Report Appendix B transcription | Preserve the 100 reported derived observations | `results/real_image_proxy_observations.csv` |
+| CNN image-feature + regression forecast workflow | Current scaffold | Compare SVR, Random Forest, and XGBoost with chronological validation | `src/fogforecast/` |
+| EI paper working draft | Current scaffold | Chinese manuscript outline, methods, result slots, and references | `docs/manuscript_zh.md` |
 
 ## Transmittance CNN result
 
 The v1.0.0 checkpoint achieved 92.459% test accuracy (Macro F1 0.9248 in the integrated report) on 4,575 balanced synthetic transmittance maps. This is a synthetic-domain classification result; it is not real-road visibility-meter validation. The 30-image random check is a sanity check from the same domain, not an independent external test.
 
-Use and retraining instructions are in [`src/transmittance_beta/README.md`](src/transmittance_beta/README.md).
+Use and retraining instructions are in `src/transmittance_beta/README.md`.
 
 ## Broader study: evidence limits
 
 The integrated report combines synthetic CNN calibration, unlabeled real-image features/TOPSIS, a 100-image proxy sequence, AMOS observations, and a highway frame sequence. Their evidence is not interchangeable. Proxy forecasting metrics are not physically calibrated road forecasts; AMOS cross-event results show substantial generalization loss, and persistence outperformed the tested temporal Ridge model at 5- and 15-minute horizons.
+
+## Forecast workflow added in this revision
+
+The new workflow extracts frozen ImageNet ResNet-18 embeddings from timestamped images, joins the embeddings with visibility and meteorological observations, forms 1–5 step lag features, then compares SVR, Random Forest, and XGBoost on a chronological 70/30 split. Standardizers are fit only on the training partition. The outputs include held-out predictions, MSE/MAE/RMSE, descriptive statistics, forecast and error plots, and XGBoost feature importance. It does not use ARIMA or R².
+
+To prepare a new dataset, use `data_dictionary_template.csv` and edit `config/example.yaml`. Data and images are not included in this repository. Keep restricted or sensitive data outside Git. The complete method draft is in `docs/manuscript_zh.md`; it clearly marks result slots that require actual data and analysis.
+
+From the repository root, install and run:
+
+```bash
+python -m pip install -r requirements.txt
+export PYTHONPATH=src
+python -m fogforecast.extract_cnn_features --manifest data/processed/observations.csv --output outputs/cnn_features.csv --root .
+python -m fogforecast.run_experiment --config config/example.yaml
+```
+
+The first image-feature run downloads pretrained ResNet-18 weights using torchvision. Keep generated outputs and model weights out of Git unless a specific artifact is intended for release.
 
 ## Dataset and licensing
 

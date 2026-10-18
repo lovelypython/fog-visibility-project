@@ -1,0 +1,14 @@
+# Copy and edit for the study. Paths are relative to the project root.
+observations_csv: data/processed/observations.csv
+time_column: timestamp
+target: visibility_m
+predictors:
+  - relative_humidity
+  - temperature_c
+  - wind_speed_ms
+  - pressure_hpa
+lag_steps: 5
+train_fraction: 0.70
+random_seed: 42
+cnn_features_csv: outputs/cnn_features.csv
+output_dir: outputs

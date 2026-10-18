@@ -11,8 +11,8 @@ Research materials for road-fog visibility estimation and evolution forecasting.
 | CNN run artifacts | `v1.0.0`, original run 2026-10-04 | Preserve checkpoint, metrics, training history, and random-check outputs | `results/transmittance_beta/v1.0.0/` |
 | Integrated model results | Report transcription | Machine-readable metrics for CNN, proxy forecasting, and AMOS experiments | `results/model_metrics.csv` |
 | Real-image proxy observations | Report Appendix B transcription | Preserve the 100 reported derived observations | `results/real_image_proxy_observations.csv` |
-| CNN image-feature + regression forecast workflow | Current scaffold | Compare SVR, Random Forest, and XGBoost with chronological validation | `src/fogforecast/` |
-| EI paper working draft | Current scaffold | Chinese manuscript outline, methods, result slots, and references | `docs/manuscript_zh.md` |
+| CNN image-feature + regression forecast workflow | Current scaffold | Proposed paired-data workflow; existing proxy test uses index order | `src/fogforecast/` |
+| Reviewed HiMCM-format paper | Oct 2026 | English summary sheet, audited methods/results, references and AI-use report | `paper/Fog_Evolution_Forecasting_HiMCM_Reviewed.pdf` (`.docx` source) |
 
 ## Transmittance CNN result
 
@@ -22,13 +22,13 @@ Use and retraining instructions are in `src/transmittance_beta/README.md`.
 
 ## Broader study: evidence limits
 
-The archived integrated reports preserve earlier study versions for provenance; use docs/manuscript_zh.md as the current EI-paper draft. The report combines synthetic CNN calibration, unlabeled real-image features/TOPSIS, a 100-image proxy sequence, AMOS observations, and a highway frame sequence. Their evidence is not interchangeable. Proxy forecasting metrics are not physically calibrated road forecasts; AMOS cross-event results show substantial generalization loss, and persistence outperformed the tested temporal Ridge model at 5- and 15-minute horizons.
+The archived integrated reports preserve earlier study versions for provenance; use `paper/Fog_Evolution_Forecasting_HiMCM_Reviewed.pdf` as the current reviewed paper. The report combines synthetic CNN calibration, unlabeled real-image features/TOPSIS, a 100-image proxy sequence, AMOS observations, and a highway frame sequence. Their evidence is not interchangeable. Proxy forecasting metrics are not physically calibrated road forecasts; AMOS cross-event results show substantial generalization loss, and persistence outperformed the tested temporal Ridge model at 5- and 15-minute horizons.
 
 ## Forecast workflow added in this revision
 
-The new workflow extracts frozen ImageNet ResNet-18 embeddings from timestamped images, joins the embeddings with visibility and meteorological observations, forms 1–5 step lag features, then compares SVR, Random Forest, and XGBoost on a chronological 70/30 split. Standardizers are fit only on the training partition. The outputs include held-out predictions, MSE/MAE/RMSE, descriptive statistics, forecast and error plots, and XGBoost feature importance. The available 100-row proxy table has also been evaluated with the included 70/30 config; this is an index-ordered exploratory benchmark, not a physically timed road forecast.
+For a future paired dataset, the workflow can extract frozen ImageNet ResNet-18 embeddings from timestamped images, join these with visibility and meteorological observations, form 1–5 step lag features, and compare SVR, Random Forest, and XGBoost on a chronological 70/30 split. Standardizers are fit only on the training partition. The scripts can output held-out predictions, MSE/MAE/RMSE, descriptive statistics, forecast and error plots, and XGBoost feature importance. The available 100-row proxy table has also been evaluated with the included 70/30 config; this is an index-ordered exploratory benchmark, not a physically timed road forecast.
 
-To prepare a new dataset, use `data_dictionary_template.csv` and edit `config/example.yaml`. Original timestamped images and synchronized visibility/meteorological observations are not included. The derived 100-row proxy feature table is included for the exploratory benchmark. Keep restricted or sensitive raw data outside Git. The complete method draft is in `docs/manuscript_zh.md`; it clearly marks result slots that require actual data and analysis.
+To prepare a new dataset, use `data_dictionary_template.csv` and edit `config/example.yaml`. Original timestamped images and synchronized visibility/meteorological observations are not included. The derived 100-row proxy feature table is included for the exploratory benchmark. Keep restricted or sensitive raw data outside Git. The reviewed paper states which observations support each result and reports the training-mean baseline, which outperforms all three fitted models on this proxy holdout. It is a research draft in HiMCM format, not a solution to an announced contest problem; replace the control-number placeholder if it is later used for an actual submission.
 
 From the repository root, install and run:
 

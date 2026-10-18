@@ -53,7 +53,8 @@ def load_frame(config: dict, project_root: Path) -> tuple[pd.DataFrame, list[str
     missing = set(required) - set(frame.columns)
     if missing:
         raise ValueError(f"Observations CSV lacks columns: {sorted(missing)}")
-    frame[time_col] = pd.to_datetime(frame[time_col], errors="raise", utc=True)
+    if not pd.api.types.is_numeric_dtype(frame[time_col]):
+        frame[time_col] = pd.to_datetime(frame[time_col], errors="raise", utc=True)
     frame = frame.sort_values(time_col).drop_duplicates(time_col, keep="last").reset_index(drop=True)
     numeric = [target, *predictors]
     frame[numeric] = frame[numeric].apply(pd.to_numeric, errors="coerce")
@@ -111,13 +112,15 @@ def run(config_path: Path) -> None:
 
     out = (root / config.get("output_dir", "outputs")).resolve()
     out.mkdir(parents=True, exist_ok=True)
-    predictions = pd.DataFrame({time_col: test[time_col].astype(str), "actual": y_test.to_numpy()})
+    predictions = pd.DataFrame({time_col: test[time_col].to_numpy(), "actual": y_test.to_numpy()})
     metrics: list[dict[str, object]] = []
     model_names = list(make_models(int(config.get("random_seed", 42))))
     fitted_models = make_models(int(config.get("random_seed", 42)))
     for name, model in fitted_models.items():
         model.fit(X_train, y_train)
         predicted = model.predict(X_test)
+        if "minimum_prediction" in config:
+            predicted = np.maximum(float(config["minimum_prediction"]), predicted)
         predictions[name] = predicted
         mse = mean_squared_error(y_test, predicted)
         metrics.append({"model": name, "MSE": mse, "RMSE": float(np.sqrt(mse)),
@@ -129,10 +132,14 @@ def run(config_path: Path) -> None:
     predictions.to_csv(out / "predictions.csv", index=False)
 
     fig, ax = plt.subplots(figsize=(12, 5))
-    ax.plot(pd.to_datetime(predictions[time_col]), predictions["actual"], label="Observed", linewidth=2)
+    x_values = predictions[time_col]
+    if not pd.api.types.is_numeric_dtype(x_values):
+        x_values = pd.to_datetime(x_values)
+    ax.plot(x_values, predictions["actual"], label="Observed", linewidth=2)
     for name in model_names:
-        ax.plot(pd.to_datetime(predictions[time_col]), predictions[name], label=name, alpha=0.85)
-    ax.set(title="Fog evolution forecast: chronological test period", xlabel="Time", ylabel=target)
+        ax.plot(x_values, predictions[name], label=name, alpha=0.85)
+    ax.set(title="Fog evolution forecast: chronological test period",
+           xlabel=config.get("time_label", "Time"), ylabel=target)
     ax.legend(); ax.grid(alpha=0.25); fig.tight_layout()
     fig.savefig(out / "forecast.png", dpi=180); plt.close(fig)
 

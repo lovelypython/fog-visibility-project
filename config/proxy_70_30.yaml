@@ -1,0 +1,18 @@
+# Exploratory sequence benchmark from the archived 100-row derived proxy table.
+# Observation index is not verified physical time; interpret results accordingly.
+observations_csv: results/real_image_proxy_observations.csv
+time_column: observation
+time_label: Observation index (not verified physical time)
+target: beta_proxy_km-1
+predictors:
+  - brightness
+  - contrast
+  - saturation
+  - dark_channel
+  - edge_density
+  - severity_score
+lag_steps: 5
+train_fraction: 0.70
+random_seed: 42
+output_dir: results/proxy_forecast_70_30
+minimum_prediction: 3.912

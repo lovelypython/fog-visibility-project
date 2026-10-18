@@ -1,0 +1,327 @@
+{
+  "seed": 20261004,
+  "sample_size": 30,
+  "sampling": "10 random files per beta class from official test split",
+  "correct": 28,
+  "accuracy": 0.9333333333333333,
+  "confusion_matrix_rows_actual_columns_predicted": {
+    "0.005": {
+      "0.005": 9,
+      "0.01": 1,
+      "0.02": 0
+    },
+    "0.01": {
+      "0.005": 0,
+      "0.01": 9,
+      "0.02": 1
+    },
+    "0.02": {
+      "0.005": 0,
+      "0.01": 0,
+      "0.02": 10
+    }
+  },
+  "mean_confidence": 0.8290663103262583,
+  "samples": [
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000298_000019_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.01",
+      "correct": true,
+      "confidence": 0.808294951915741,
+      "prob_0.005": 0.0306586641818285,
+      "prob_0.01": 0.808294951915741,
+      "prob_0.02": 0.16104641556739807
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000510_000019_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.005",
+      "correct": true,
+      "confidence": 0.7187663316726685,
+      "prob_0.005": 0.7187663316726685,
+      "prob_0.01": 0.2810952961444855,
+      "prob_0.02": 0.00013835448771715164
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/mainz/mainz_000003_015411_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.01",
+      "correct": false,
+      "confidence": 0.5670816898345947,
+      "prob_0.005": 0.4314586818218231,
+      "prob_0.01": 0.5670816898345947,
+      "prob_0.02": 0.0014596544206142426
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000024_000019_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.9783502817153931,
+      "prob_0.005": 8.620222615718376e-06,
+      "prob_0.01": 0.021641088649630547,
+      "prob_0.02": 0.9783502817153931
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000390_000019_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.9787371158599854,
+      "prob_0.005": 7.599659966217587e-06,
+      "prob_0.01": 0.021255314350128174,
+      "prob_0.02": 0.9787371158599854
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000083_000019_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.01",
+      "correct": true,
+      "confidence": 0.8784064650535583,
+      "prob_0.005": 0.06771975010633469,
+      "prob_0.01": 0.8784064650535583,
+      "prob_0.02": 0.05387374386191368
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000394_000019_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.8777673244476318,
+      "prob_0.005": 0.00022728218755219132,
+      "prob_0.01": 0.1220054030418396,
+      "prob_0.02": 0.8777673244476318
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000507_000019_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.9830312728881836,
+      "prob_0.005": 5.216218141868012e-06,
+      "prob_0.01": 0.016963517293334007,
+      "prob_0.02": 0.9830312728881836
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000083_000019_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.005",
+      "correct": true,
+      "confidence": 0.9091538190841675,
+      "prob_0.005": 0.9091538190841675,
+      "prob_0.01": 0.09083923697471619,
+      "prob_0.02": 6.934225893928669e-06
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/munich/munich_000286_000019_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.01",
+      "correct": true,
+      "confidence": 0.8653887510299683,
+      "prob_0.005": 0.03315025568008423,
+      "prob_0.01": 0.8653887510299683,
+      "prob_0.02": 0.10146097093820572
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000216_000019_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.01",
+      "correct": true,
+      "confidence": 0.8319945335388184,
+      "prob_0.005": 0.04583820700645447,
+      "prob_0.01": 0.8319945335388184,
+      "prob_0.02": 0.12216730415821075
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000365_000019_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.005",
+      "correct": true,
+      "confidence": 0.5270337462425232,
+      "prob_0.005": 0.5270337462425232,
+      "prob_0.01": 0.4718877673149109,
+      "prob_0.02": 0.0010785196209326386
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/bielefeld/bielefeld_000000_050021_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.7194492220878601,
+      "prob_0.005": 0.0012314006453379989,
+      "prob_0.01": 0.2793193459510803,
+      "prob_0.02": 0.7194492220878601
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000537_000019_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.005",
+      "correct": true,
+      "confidence": 0.9554486870765686,
+      "prob_0.005": 0.9554486870765686,
+      "prob_0.01": 0.04455011710524559,
+      "prob_0.02": 1.2449804671632592e-06
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/munich/munich_000242_000019_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.005",
+      "correct": true,
+      "confidence": 0.8944398760795593,
+      "prob_0.005": 0.8944398760795593,
+      "prob_0.01": 0.10554808378219604,
+      "prob_0.02": 1.2043299648212269e-05
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/leverkusen/leverkusen_000029_000019_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.01",
+      "correct": true,
+      "confidence": 0.8458461165428162,
+      "prob_0.005": 0.13636977970600128,
+      "prob_0.01": 0.8458461165428162,
+      "prob_0.02": 0.01778409630060196
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000348_000019_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.01",
+      "correct": true,
+      "confidence": 0.8410102725028992,
+      "prob_0.005": 0.04236524552106857,
+      "prob_0.01": 0.8410102725028992,
+      "prob_0.02": 0.11662447452545166
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000249_000019_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.005",
+      "correct": true,
+      "confidence": 0.7113991379737854,
+      "prob_0.005": 0.7113991379737854,
+      "prob_0.01": 0.2884176969528198,
+      "prob_0.02": 0.0001831693371059373
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/bonn/bonn_000010_000019_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.02",
+      "correct": false,
+      "confidence": 0.6716977953910828,
+      "prob_0.005": 0.0013986751437187195,
+      "prob_0.01": 0.3269035220146179,
+      "prob_0.02": 0.6716977953910828
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000004_000019_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.8636079430580139,
+      "prob_0.005": 0.0003262691025156528,
+      "prob_0.01": 0.13606581091880798,
+      "prob_0.02": 0.8636079430580139
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000167_000019_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.729340136051178,
+      "prob_0.005": 0.0010746506741270423,
+      "prob_0.01": 0.26958519220352173,
+      "prob_0.02": 0.729340136051178
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/munich/munich_000151_000019_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.9609460234642029,
+      "prob_0.005": 3.0382263503270224e-05,
+      "prob_0.01": 0.039023660123348236,
+      "prob_0.02": 0.9609460234642029
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000476_000019_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.01",
+      "correct": true,
+      "confidence": 0.7589187026023865,
+      "prob_0.005": 0.024584485217928886,
+      "prob_0.01": 0.7589187026023865,
+      "prob_0.02": 0.2164967656135559
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/munich/munich_000096_000019_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.005",
+      "correct": true,
+      "confidence": 0.9001989364624023,
+      "prob_0.005": 0.9001989364624023,
+      "prob_0.01": 0.09979083389043808,
+      "prob_0.02": 1.027553116728086e-05
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000115_000019_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.9498971104621887,
+      "prob_0.005": 4.440539487404749e-05,
+      "prob_0.01": 0.050058502703905106,
+      "prob_0.02": 0.9498971104621887
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/bielefeld/bielefeld_000000_053384_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.005",
+      "correct": true,
+      "confidence": 0.7837231159210205,
+      "prob_0.005": 0.7837231159210205,
+      "prob_0.01": 0.21620391309261322,
+      "prob_0.02": 7.293392991414294e-05
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/mainz/mainz_000003_016542_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.01",
+      "correct": true,
+      "confidence": 0.5876623392105103,
+      "prob_0.005": 0.40998077392578125,
+      "prob_0.01": 0.5876623392105103,
+      "prob_0.02": 0.002356873592361808
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/munich/munich_000158_000019_leftImg8bit_transmittance_beta_0.005.png",
+      "actual_beta": "0.005",
+      "predicted_beta": "0.005",
+      "correct": true,
+      "confidence": 0.9939311742782593,
+      "prob_0.005": 0.9939311742782593,
+      "prob_0.01": 0.006068899296224117,
+      "prob_0.02": 9.319040650268562e-09
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000184_000019_leftImg8bit_transmittance_beta_0.02.png",
+      "actual_beta": "0.02",
+      "predicted_beta": "0.02",
+      "correct": true,
+      "confidence": 0.9501914978027344,
+      "prob_0.005": 4.3357056711101905e-05,
+      "prob_0.01": 0.04976517707109451,
+      "prob_0.02": 0.9501914978027344
+    },
+    {
+      "file": "leftImg8bit_transmittance/test/berlin/berlin_000496_000019_leftImg8bit_transmittance_beta_0.01.png",
+      "actual_beta": "0.01",
+      "predicted_beta": "0.01",
+      "correct": true,
+      "confidence": 0.8302749395370483,
+      "prob_0.005": 0.0477069690823555,
+      "prob_0.01": 0.8302749395370483,
+      "prob_0.02": 0.12201806157827377
+    }
+  ]
+}

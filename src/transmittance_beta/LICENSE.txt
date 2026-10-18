@@ -1,0 +1,23 @@
+----------------------------
+The Foggy Cityscapes Dataset
+----------------------------
+
+
+License agreement
+-----------------
+
+This dataset is made freely available to academic and non-academic entities for non-commercial purposes such as academic research, teaching, scientific publications, or personal experimentation. Permission is granted to use the data given that you agree:
+
+1. That the dataset comes "AS IS", without express or implied warranty. Although every effort has been made to ensure accuracy, we (ETH Zurich) do not accept any responsibility for errors or omissions.
+2. That you include a reference to the Foggy Cityscapes dataset and to the original Cityscapes dataset in any work that makes use of the Foggy Cityscapes dataset. For research papers, cite our relevant publication as listed on our website people.ee.ethz.ch/~csakarid/SFSU_synthetic and the Cityscapes publication as listed on www.cityscapes-dataset.com/citation ; for other media, cite the two publications as listed on the respective aforementioned websites or include links to both of these websites.
+3. That you do not distribute this dataset. It is permissible to distribute derivative works in as far as they constitute abstract representations of the dataset, such as models trained on it.
+4. That you may not use the dataset or any derivative work for commercial purposes as, for example, licensing or selling the data, or using the data with a purpose to procure a commercial gain.
+5. That all rights not expressly granted to you are reserved by us (ETH Zurich).
+
+
+Contact
+-------
+
+Christos Sakaridis
+csakarid@vision.ee.ethz.ch
+people.ee.ethz.ch/~csakarid/SFSU_synthetic

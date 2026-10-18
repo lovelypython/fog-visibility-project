@@ -1,0 +1,36 @@
+{
+  "target": "filename beta class (inverse meters)",
+  "betas": [
+    0.005,
+    0.01,
+    0.02
+  ],
+  "best_epoch": 5,
+  "best_val_accuracy": 0.93,
+  "test_loss": 0.23637215098396677,
+  "test_accuracy": 0.9245901639344263,
+  "test_confusion_matrix_rows_true_columns_predicted": [
+    [
+      1370,
+      155,
+      0
+    ],
+    [
+      94,
+      1384,
+      47
+    ],
+    [
+      0,
+      49,
+      1476
+    ]
+  ],
+  "test_class_counts": {
+    "0.005": 1525,
+    "0.01": 1525,
+    "0.02": 1525
+  },
+  "physical_model": "t = exp(-beta*d); -ln(t) = beta*d",
+  "limitation": "Without depth maps, beta and depth are not separately identifiable from transmittance alone."
+}

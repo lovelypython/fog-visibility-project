@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.key
+*.pem
+*.p12
+.DS_Store
+outputs/**
+!outputs/README.md

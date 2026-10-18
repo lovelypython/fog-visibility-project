@@ -1,0 +1,6 @@
+cff-version: 1.2.0
+title: "Fog Visibility Project"
+authors:
+  - family-names: "Project contributors"
+message: "If you use these materials, cite the project reports and identify the exact repository revision."
+type: software

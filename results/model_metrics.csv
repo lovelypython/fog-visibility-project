@@ -1,0 +1,41 @@
+experiment,model,split,n,metric,value,unit,notes
+synthetic_transmittance_cnn,CNN,test,4575,accuracy,0.9246,proportion,synthetic domain only
+synthetic_transmittance_cnn,CNN,test,4575,macro_f1,0.9248,score,synthetic domain only
+synthetic_transmittance_cnn,CNN,test,4575,cross_entropy,0.23637,loss,synthetic domain only
+synthetic_transmittance_cnn,CNN,test,4575,visibility_mapping_MAE,19.48,m,nominal class visibility 600/300/150 m
+real_image_proxy_forecast,ARIMA(0,1,1),holdout,20,MAE,16.3759,km^-1,proxy sequence; not field-calibrated
+real_image_proxy_forecast,ARIMA(0,1,1),holdout,20,RMSE,19.5360,km^-1,proxy sequence; not field-calibrated
+real_image_proxy_forecast,ARIMA(0,1,1),holdout,20,R2,-0.0554,score,proxy sequence; not field-calibrated
+real_image_proxy_forecast,ARIMA(0,1,1),holdout,20,directional_accuracy,0.70,proportion,proxy sequence; not field-calibrated
+real_image_proxy_forecast,Random Forest,holdout,20,MAE,17.3133,km^-1,proxy sequence; not field-calibrated
+real_image_proxy_forecast,Random Forest,holdout,20,RMSE,21.9277,km^-1,proxy sequence; not field-calibrated
+real_image_proxy_forecast,Random Forest,holdout,20,R2,-0.3296,score,proxy sequence; not field-calibrated
+real_image_proxy_forecast,Random Forest,holdout,20,directional_accuracy,0.70,proportion,proxy sequence; not field-calibrated
+real_image_proxy_forecast,XGBoost,holdout,20,MAE,17.5265,km^-1,proxy sequence; not field-calibrated
+real_image_proxy_forecast,XGBoost,holdout,20,RMSE,22.5801,km^-1,proxy sequence; not field-calibrated
+real_image_proxy_forecast,XGBoost,holdout,20,R2,-0.4099,score,proxy sequence; not field-calibrated
+real_image_proxy_forecast,XGBoost,holdout,20,directional_accuracy,0.70,proportion,proxy sequence; not field-calibrated
+AMOS_meteorological,Ridge,training_day,1440,MAE,1681.23,m,measured MOR target
+AMOS_meteorological,Ridge,training_day,1440,RMSE,2057.17,m,measured MOR target
+AMOS_meteorological,Ridge,training_day,1440,R2,0.3876,score,measured MOR target
+AMOS_meteorological,Ridge,independent_test_day,1438,MAE,3125.61,m,measured MOR target
+AMOS_meteorological,Ridge,independent_test_day,1438,RMSE,4260.71,m,measured MOR target
+AMOS_meteorological,Ridge,independent_test_day,1438,R2,-0.4736,score,measured MOR target
+AMOS_meteorological,Random Forest,training_day,1440,MAE,134.11,m,measured MOR target
+AMOS_meteorological,Random Forest,training_day,1440,RMSE,222.12,m,measured MOR target
+AMOS_meteorological,Random Forest,training_day,1440,R2,0.9929,score,measured MOR target
+AMOS_meteorological,Random Forest,independent_test_day,1438,MAE,4045.58,m,measured MOR target
+AMOS_meteorological,Random Forest,independent_test_day,1438,RMSE,5119.92,m,measured MOR target
+AMOS_meteorological,Random Forest,independent_test_day,1438,R2,-1.1278,score,measured MOR target
+AMOS_temporal_forecast,Temporal Ridge,5_min,1410,MAE,515.95,m,MOR forecast
+AMOS_temporal_forecast,Temporal Ridge,5_min,1410,RMSE,784.34,m,MOR forecast
+AMOS_temporal_forecast,Temporal Ridge,5_min,1410,R2,0.9507,score,MOR forecast
+AMOS_temporal_forecast,Persistence,5_min,1410,MAE,154.01,m,MOR forecast
+AMOS_temporal_forecast,Persistence,5_min,1410,RMSE,430.42,m,MOR forecast
+AMOS_temporal_forecast,Persistence,5_min,1410,R2,0.9852,score,MOR forecast
+AMOS_temporal_forecast,Temporal Ridge,15_min,1400,MAE,918.39,m,MOR forecast
+AMOS_temporal_forecast,Temporal Ridge,15_min,1400,RMSE,1374.65,m,MOR forecast
+AMOS_temporal_forecast,Temporal Ridge,15_min,1400,R2,0.8497,score,MOR forecast
+AMOS_temporal_forecast,Persistence,15_min,1400,MAE,299.43,m,MOR forecast
+AMOS_temporal_forecast,Persistence,15_min,1400,RMSE,720.31,m,MOR forecast
+AMOS_temporal_forecast,Persistence,15_min,1400,R2,0.9587,score,MOR forecast

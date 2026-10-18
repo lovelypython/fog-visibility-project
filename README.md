@@ -28,7 +28,7 @@ The archived integrated reports preserve earlier study versions for provenance; 
 
 The new workflow extracts frozen ImageNet ResNet-18 embeddings from timestamped images, joins the embeddings with visibility and meteorological observations, forms 1–5 step lag features, then compares SVR, Random Forest, and XGBoost on a chronological 70/30 split. Standardizers are fit only on the training partition. The outputs include held-out predictions, MSE/MAE/RMSE, descriptive statistics, forecast and error plots, and XGBoost feature importance. The available 100-row proxy table has also been evaluated with the included 70/30 config; this is an index-ordered exploratory benchmark, not a physically timed road forecast.
 
-To prepare a new dataset, use `data_dictionary_template.csv` and edit `config/example.yaml`. Data and images are not included in this repository. Keep restricted or sensitive data outside Git. The complete method draft is in `docs/manuscript_zh.md`; it clearly marks result slots that require actual data and analysis.
+To prepare a new dataset, use `data_dictionary_template.csv` and edit `config/example.yaml`. Original timestamped images and synchronized visibility/meteorological observations are not included. The derived 100-row proxy feature table is included for the exploratory benchmark. Keep restricted or sensitive raw data outside Git. The complete method draft is in `docs/manuscript_zh.md`; it clearly marks result slots that require actual data and analysis.
 
 From the repository root, install and run:
 

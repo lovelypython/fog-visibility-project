@@ -1,0 +1,8 @@
+column,description,unit,source,quality_control
+timestamp,observation time,ISO-8601 UTC,TO_FILL,TO_FILL
+visibility_m,horizontal visibility,m,TO_FILL,TO_FILL
+relative_humidity,relative humidity,%,TO_FILL,TO_FILL
+temperature_c,air temperature,degree_C,TO_FILL,TO_FILL
+wind_speed_ms,wind speed,m/s,TO_FILL,TO_FILL
+pressure_hpa,station pressure,hPa,TO_FILL,TO_FILL
+image_path,path relative to project root,NA,TO_FILL,one image per timestamp

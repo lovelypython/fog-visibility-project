@@ -22,11 +22,11 @@ Use and retraining instructions are in `src/transmittance_beta/README.md`.
 
 ## Broader study: evidence limits
 
-The integrated report combines synthetic CNN calibration, unlabeled real-image features/TOPSIS, a 100-image proxy sequence, AMOS observations, and a highway frame sequence. Their evidence is not interchangeable. Proxy forecasting metrics are not physically calibrated road forecasts; AMOS cross-event results show substantial generalization loss, and persistence outperformed the tested temporal Ridge model at 5- and 15-minute horizons.
+The archived integrated reports preserve earlier study versions for provenance; use docs/manuscript_zh.md as the current EI-paper draft. The report combines synthetic CNN calibration, unlabeled real-image features/TOPSIS, a 100-image proxy sequence, AMOS observations, and a highway frame sequence. Their evidence is not interchangeable. Proxy forecasting metrics are not physically calibrated road forecasts; AMOS cross-event results show substantial generalization loss, and persistence outperformed the tested temporal Ridge model at 5- and 15-minute horizons.
 
 ## Forecast workflow added in this revision
 
-The new workflow extracts frozen ImageNet ResNet-18 embeddings from timestamped images, joins the embeddings with visibility and meteorological observations, forms 1–5 step lag features, then compares SVR, Random Forest, and XGBoost on a chronological 70/30 split. Standardizers are fit only on the training partition. The outputs include held-out predictions, MSE/MAE/RMSE, descriptive statistics, forecast and error plots, and XGBoost feature importance. It does not use ARIMA or R².
+The new workflow extracts frozen ImageNet ResNet-18 embeddings from timestamped images, joins the embeddings with visibility and meteorological observations, forms 1–5 step lag features, then compares SVR, Random Forest, and XGBoost on a chronological 70/30 split. Standardizers are fit only on the training partition. The outputs include held-out predictions, MSE/MAE/RMSE, descriptive statistics, forecast and error plots, and XGBoost feature importance. The available 100-row proxy table has also been evaluated with the included 70/30 config; this is an index-ordered exploratory benchmark, not a physically timed road forecast.
 
 To prepare a new dataset, use `data_dictionary_template.csv` and edit `config/example.yaml`. Data and images are not included in this repository. Keep restricted or sensitive data outside Git. The complete method draft is in `docs/manuscript_zh.md`; it clearly marks result slots that require actual data and analysis.
 
